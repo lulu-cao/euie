@@ -13,10 +13,14 @@ body {
 
 .welcome {
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 #main {
     margin-bottom: 20px;
     height: 500px;
-    transition: all 0.3s ease-in-out;
+}
+
+button {
+    width: 100px;
 }

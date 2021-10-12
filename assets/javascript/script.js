@@ -1,7 +1,11 @@
+//setting up variables
 var mainEl = document.getElementById("main");
 var timerEl = document.getElementById("countdown");
+var previous = document.querySelector("#prev");
+var next = document.querySelector("#next");
+var button = document.querySelectorAll(".button");
 
-var message = ["Hello, my name is Euthyphro.", 
+var message = ["My name is Euthyphro.", 
 "You can call me Euie.", 
 "I am one and a half years old.", 
 "I came to Ian's family when I was four months old.",
@@ -21,7 +25,7 @@ var message = ["Hello, my name is Euthyphro.",
 "being pat,", 
 "and being kissed.",
 "I am afraid of dogs.",
-"Sometimes, I will be terrified by barking dogs.",
+"I will be terrified by barking dogs.",
 "But thanks to Ian, I always live a happy life."]
 
 var endMessage = "Thank you for visiting me!";
@@ -50,8 +54,15 @@ var images = ["assets/images/1.jpg",
 "assets/images/22.jpg",
 "assets/images/23.jpg"]
 
+//add styles and background images with javascript
+let welcome = document.querySelector('.welcome');
+welcome.setAttribute("style", "padding:20px;");
+mainEl.setAttribute('src', images[22]);
+timerEl.textContent = "Hello, I'm going to tell you my story. Please don't click on the button until I finish the story.";
+
 let i = 0;
 
+//this function simulates the slideshow effect; the page will display euie's story automatically once it is open
 function story() {
     var timeleft = message.length;
 
@@ -72,8 +83,32 @@ function story() {
 
 story();
 
+//setting up the function for the 'previous' and the 'next' button which show up after the slideshow is over
+var index = 21;
 
-//add styles and background images with javascript
-let welcome = document.querySelector('.welcome');
-welcome.setAttribute("style", "padding:20px;")
+function navigate (direction) {
+    index = index + direction;
+    if (index > images.length - 1) {
+        index = 0
+    } else if (index < 0) {
+        index = images.length - 1
+    }
+}
+
+navigate (0);
+
+previous.addEventListener("click", function(event) {
+    navigate(-1);
+    timerEl.textContent = message[index];
+    mainEl.setAttribute('src', images[index]);
+});
+
+next.addEventListener("click", function(event) {
+    navigate(1);
+    timerEl.textContent = message[index];
+    mainEl.setAttribute('src', images[index]);
+});
+
+
+
 
