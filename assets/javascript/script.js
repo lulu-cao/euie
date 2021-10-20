@@ -1,8 +1,8 @@
 //setting up variables
 var mainEl = document.getElementById("main");
 var timerEl = document.getElementById("countdown");
-var previous = document.querySelector("#prev");
-var next = document.querySelector("#next");
+var previous = document.getElementById("prev");
+var next = document.getElementById("next");
 var button = document.querySelectorAll(".button");
 
 var message = ["My name is Euthyphro.", 
@@ -58,7 +58,7 @@ var images = ["assets/images/1.jpg",
 let welcome = document.querySelector('.welcome');
 welcome.setAttribute("style", "padding:20px;");
 mainEl.setAttribute('src', images[22]);
-timerEl.textContent = "Hello, I'm going to tell you my story. Please don't click on the button until I finish the story.";
+timerEl.textContent = "Hello, thank you for coming to listen to my story.";
 
 let i = 0;
 
@@ -76,6 +76,8 @@ function story() {
         if (timeleft < 0) {
             timerEl.textContent = endMessage;
             mainEl.setAttribute('src', images[0]);
+            next.style.opacity = "1";
+            previous.style.opacity = "1";
             clearInterval(timeInterval);
         }
     }, 3000);

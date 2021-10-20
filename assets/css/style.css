@@ -24,3 +24,11 @@ body {
 button {
     width: 100px;
 }
+
+#prev {
+    opacity: 0;
+}
+
+#next {
+    opacity: 0;
+}
