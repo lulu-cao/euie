@@ -28,8 +28,6 @@ var message = ["My name is Euthyphro.",
 "I will be terrified by barking dogs.",
 "But thanks to Ian, I always live a happy life."]
 
-var endMessage = "Thank you for visiting me!";
-
 var images = ["assets/images/1.jpg", 
 "assets/images/2.jpg", 
 "assets/images/3.jpg", 
@@ -74,8 +72,6 @@ function story() {
         i++;
 
         if (timeleft < 0) {
-            timerEl.textContent = endMessage;
-            mainEl.setAttribute('src', images[0]);
             next.style.opacity = "1";
             previous.style.opacity = "1";
             clearInterval(timeInterval);
