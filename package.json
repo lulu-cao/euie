@@ -1,0 +1,23 @@
+{
+  "name": "euie",
+  "version": "1.0.0",
+  "description": "This simulates a slideshow that showcases different life stages of Euie.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lulu-cao/euie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lulu-cao/euie/issues"
+  },
+  "homepage": "https://github.com/lulu-cao/euie#readme",
+  "dependencies": {
+    "@dimensional-innovations/electron-background": "^2.0.4",
+    "electron": "^29.2.0"
+  }
+}
