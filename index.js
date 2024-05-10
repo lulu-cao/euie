@@ -1,5 +1,4 @@
 const { app, BrowserWindow } = require('electron');
-const { init } = require('@dimensional-innovations/electron-background');
 const path = require('path');
 
 const createWindow = () => {
@@ -13,13 +12,6 @@ const createWindow = () => {
 
   win.loadFile('index.html')
 }
-
-// init({
-//   appUrl: './index.html',
-//   config: {},
-//   plugins: []
-// });
-
 app.whenReady().then(() => {
   createWindow()
 
@@ -27,3 +19,23 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 })
+
+// const { init } = require('@dimensional-innovations/electron-background');
+// const path = require('node:path');
+
+// init({
+//   appUrl: `file://${path.resolve('./index.html')}`,
+//   browserWindowOptions: {
+//     width: 1200,
+//     height: 800,
+//     webPreferences: {
+//       preload: path.join(__dirname, 'preload.js')
+//     },
+//   },
+//   // plugins: [
+//   //   {beforeLoad: () => {
+//   //     browserWindow.on('ready-to-show', () => browserWindow.webContents.openDevTools());
+//   //   }}
+//   // ]
+// })
+
