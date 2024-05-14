@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/lulu-cao/euie#readme",
   "dependencies": {
-    "@dimensional-innovations/electron-background": "^2.0.4",
+    "@dimensional-innovations/electron-background": "^2.0.7",
+    "electron-devtools-installer": "^3.2.0",
     "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
